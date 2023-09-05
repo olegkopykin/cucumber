@@ -1,6 +1,8 @@
-Feature: Create order
+Feature: User can create order via API
 
-  Scenario Outline: Create an order and check the result
+  Scenario Outline: We create an order and check that when sending a request to the API,
+  it returns an order with the data that we sent
+
     Given Send a post request from the createOrder.json file using the parameters <id>, <quantity>
     When Get the order by <id>
     Then Input data <id>, <quantity>, <complete> are equal to the response data from the server
